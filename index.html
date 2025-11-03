@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html> 
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="RocketCake">
+  <title>Interactive Page</title>
+  <style>
+    /* General responsive styling */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 10px auto;
+    }
+
+    div[id^="container_"], div[id^="button_"] {
+      width: 90%;
+      max-width: 1200px;
+      margin: 10px auto;
+      cursor: pointer;
+    }
+
+    div[id^="button_"] {
+      text-align: center;
+      padding: 10px;
+      background: #ccc;
+      border-radius: 5px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .textstyle3 {
+      font-size: clamp(14px, 2vw, 24px);
+    }
+  </style>
+</head>
+<body>
+
+<div class="textstyle1">
+
+  <!-- Buttons -->
+  <div id="button_e32c40f" class="hidden"><div class="textstyle3">Will it ever be enough</div></div>
+  <div id="button_756977fa"><div class="textstyle3">I've found peace ever since I met her</div></div>
+  <div id="button_1a386bfe" class="hidden"><div class="textstyle3">I think I've had enough</div></div>
+  <div id="button_21012002" class="hidden"><div class="textstyle3">Nothing seems enough</div></div>
+  <div id="button_63d1f9fa" class="hidden"><div class="textstyle3">Change is going to come<br/>But when?</div></div>
+  <div id="button_4d601d24" class="hidden"><div class="textstyle3">Clean me up</div></div>
+  <div id="button_17435cc4" class="hidden"><div class="textstyle3">Capture me</div></div>
+  <div id="button_243bb845" class="hidden"><div class="textstyle3">I don't know where to put my hands</div></div>
+  <div id="button_3aa1121" class="hidden"><div class="textstyle3">Paint it over</div></div>
+  <div id="button_4659b2a4" class="hidden"><div class="textstyle3">The things I don't talk about</div></div>
+  <div id="button_a88fb7f" class="hidden"><div class="textstyle3">I wish it would go away</div></div>
+
+  <!-- Images -->
+  <img src="rc_images/pasted_image_3.jpg" id="img_da1c9ae" class="hidden" />
+  <img src="rc_images/pasted_image_28.jpg" id="img_5a461f47" class="hidden" />
+  <img src="rc_images/pasted_image_16.jpg" id="img_1364a63e" class="hidden" />
+  <img src="rc_images/pasted_image_22.jpg" id="img_3433bcff" class="hidden" />
+  <img src="rc_images/pasted_image_21.jpg" id="img_67a9f5d3" class="hidden" />
+  <img src="rc_images/pasted_image_27.jpg" id="img_1d3ef07d" class="hidden" />
+  <img src="rc_images/pasted_image_1.jpg" id="img_7b672672" class="hidden" />
+  <img src="rc_images/pasted_image_30.jpg" id="img_56f73e7d" class="hidden" />
+
+  <!-- Containers -->
+  <div id="container_72190f17" class="hidden" style="background:#eee; padding:20px;">Filled Gray Container</div>
+  <div id="container_388dafed" class="hidden" style="background:#ddd; padding:20px;"></div>
+  <div id="container_23c81236" class="hidden" style="background:#ddd; padding:20px;"></div>
+  <div id="container_37bc641c" class="hidden" style="background:#ddd; padding:20px;"></div>
+  <div id="container_659c0436" class="hidden" style="background:#eee; padding:20px;">Filled Gray Container</div>
+  <div id="container_5849ad7a" class="hidden" style="background:#eee; padding:20px;">Filled Gray Container</div>
+
+</div>
+
+<script>
+  // Function to show elements
+  function showElements(ids) {
+    ids.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.classList.remove('hidden');
+      }
+    });
+  }
+
+  // Function to hide an element (for buttons/images)
+  function hideElement(el) {
+    el.classList.add('hidden');
+  }
+
+  // Button click events
+  document.getElementById('button_756977fa').onclick = function() {
+    hideElement(this);
+    showElements(['container_72190f17', 'button_1a386bfe', 'button_21012002']);
+  }
+
+  document.getElementById('button_1a386bfe').onclick = function() {
+    hideElement(this);
+    showElements(['container_388dafed', 'button_63d1f9fa', 'img_1d3ef07d']);
+  }
+
+  document.getElementById('button_21012002').onclick = function() {
+    hideElement(this);
+    showElements(['container_37bc641c', 'container_23c81236', 'button_4659b2a4', 'button_e32c40f', 'img_7b672672']);
+  }
+
+  document.getElementById('button_4659b2a4').onclick = function() {
+    hideElement(this);
+    showElements(['button_a88fb7f']);
+  }
+
+  document.getElementById('button_a88fb7f').onclick = function() {
+    hideElement(this);
+    showElements(['img_da1c9ae']);
+  }
+
+  document.getElementById('img_da1c9ae').onclick = function() {
+    hideElement(this);
+    // Only filled gray containers remain visible
+    showElements(['container_659c0436','container_5849ad7a','button_17435cc4','button_4d601d24','button_243bb845','button_3aa1121']);
+  }
+
+  document.getElementById('button_4d601d24').onclick = function() {
+    hideElement(this);
+    showElements(['img_5a461f47']);
+  }
+
+  document.getElementById('button_3aa1121').onclick = function() {
+    hideElement(this);
+    showElements(['img_1364a63e']);
+  }
+
+  document.getElementById('button_243bb845').onclick = function() {
+    hideElement(this);
+    showElements(['img_3433bcff']);
+  }
+
+  document.getElementById('button_17435cc4').onclick = function() {
+    hideElement(this);
+    showElements(['img_67a9f5d3']);
+  }
+
+  document.getElementById('button_e32c40f').onclick = function() {
+    hideElement(this);
+    showElements(['img_56f73e7d']);
+  }
+</script>
+
+</body>
+</html>
